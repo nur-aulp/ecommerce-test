@@ -1,3 +1,9 @@
+# Rest API Endpoints for User
+GET http://localhost:8080/users
+
+
+###
+# Rest API Endpoints for Product
 GET http://localhost:8080/products
 
 ###
@@ -31,3 +37,67 @@ Content-Type: application/json
     "categoryId":1,
     "imageUrl":"img/iphone.jpg"
 }
+###
+PUT http://localhost:8080/products/4
+Content-Type: application/json
+
+{
+    "name":"Iphone 14 Pro",
+    "description":"Latest model IPhone",
+    "price":3500000.00,
+    "stock":10,
+    "categoryId":1,
+    "imageUrl":"img/iphone.jpg"
+}
+###
+PUT http://localhost:8080/products/4
+Content-Type: application/json
+
+{
+    "name":"Iphone 14 Pro",
+    "description":"Latest model IPhone",
+    "price":3500000.00,
+    "stock":10,
+    "categoryId":1,
+    "imageUrl":"img/iphone.jpg"
+}
+###
+PUT http://localhost:8080/products/4
+Content-Type: application/json
+
+{
+    "name":"Iphone 14 Pro",
+    "description":"Latest model IPhone",
+    "price":3500000.00,
+    "stock":10,
+    "categoryId":1,
+    "imageUrl":"img/iphone.jpg"
+}
+
+###
+# Rest API Endpoints for Cart
+POST http://localhost:8080/api/cart/1/add
+Content-Type: application/json
+
+{
+  "product": { "id": 1 },
+  "quantity": 2
+}
+
+###
+GET http://localhost:8080/api/cart/1
+
+###
+DELETE http://localhost:8080/api/cart/1/clear
+
+###
+PUT http://localhost:8080/api/cart/1/update
+Content-Type: application/json
+
+{
+    "product": { "id": 1 },
+    "quantity": 3
+}
+
+###
+DELETE http://localhost:8080/api/cart/1/item/2/remove

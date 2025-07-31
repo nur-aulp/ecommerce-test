@@ -1,0 +1,33 @@
+GET http://localhost:8080/products
+
+###
+GET http://localhost:8080/products/1
+
+###
+GET http://localhost:8080/products/1
+
+###
+POST http://localhost:8080/products
+Content-Type: application/json
+
+{
+    "name":"Iphone 14 Pro",
+    "description":"Latest model smartphone",
+    "price":3500000.00,
+    "stock":10,
+    "categoryId":1,
+    "imageUrl":"img/smartphone.jpg"
+}
+
+###
+PUT http://localhost:8080/products/4
+Content-Type: application/json
+
+{
+    "name":"Iphone 14 Pro",
+    "description":"Latest model IPhone",
+    "price":3500000.00,
+    "stock":10,
+    "categoryId":1,
+    "imageUrl":"img/iphone.jpg"
+}

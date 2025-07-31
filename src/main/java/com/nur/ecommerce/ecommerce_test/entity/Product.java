@@ -1,6 +1,8 @@
 package com.nur.ecommerce.ecommerce_test.entity;
 
 import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "products")
@@ -11,17 +13,39 @@ public class Product {
     private Long id;
 
     private String name;
-    private Double price;
+    
+    private String description;
+
+    @Column(nullable = false)
+    private BigDecimal price;
+
+    @Column(nullable = false)
+    private Integer stock;
+
+    @Column(name = "category_id")
+    private Long categoryId;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "created_at")
+    private LocalDateTime createdAt;
 
     // Constructors
     public Product() {}
 
-    public Product(String name, Double price) {
+    public Product(String name, BigDecimal price, String description, Integer stock, Long categoryId, String imageUrl) {
         this.name = name;
         this.price = price;
+        this.description = description;
+        this.stock = stock;
+        this.categoryId = categoryId;
+        this.imageUrl = imageUrl;
+        this.createdAt = LocalDateTime.now();
     }
 
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
@@ -34,11 +58,51 @@ public class Product {
         this.name = name;
     }
 
-    public Double getPrice() {
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public BigDecimal getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Integer getStock() {
+        return stock;
+    }
+
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
     }
 }

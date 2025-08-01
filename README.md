@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Project  
 **Fullstack Web Developer Internship Test**  
-PT Tabel Data Informatik
+PT Tabel Data Informatika
 
 ## 📚 Knowledge Base
 

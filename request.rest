@@ -1,44 +1,58 @@
 # Rest API Endpoints for User
-GET http://localhost:8080/users
+GET http://localhost:8080/api/users
 
+###
+GET http://localhost:8080/api/users/1
+
+###
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    "username": "nur_aul",
+    "email": "nur@gmail.com",
+    "fullName": "Nur Auliya",
+    "address": "Jl. Superman No. 10, Bandung",
+    "phone": "08123456789"
+}
+
+###
+PUT http://localhost:8080/api/users/3
+Content-Type: application/json
+
+{
+    "username": "nur_aul",
+    "email": "nur@gmail.com",
+    "fullName": "Nur Auliya",
+    "address": "Jl. Dangdut No. 10, Bandung",
+    "phone": "08123456789"
+}
+
+###
+DELETE http://localhost:8080/api/users/4
 
 ###
 # Rest API Endpoints for Product
-GET http://localhost:8080/products
+GET http://localhost:8080/api/products
 
 ###
-GET http://localhost:8080/products/1
+GET http://localhost:8080/api/products/5
 
 ###
-GET http://localhost:8080/products/1
-
-###
-POST http://localhost:8080/products
+POST http://localhost:8080/api/products
 Content-Type: application/json
 
 {
-    "name":"Iphone 14 Pro",
-    "description":"Latest model smartphone",
-    "price":3500000.00,
-    "stock":10,
-    "categoryId":1,
-    "imageUrl":"img/smartphone.jpg"
+    "name":"HVS A4",
+    "description":"Kertas HVS A4 70 gram",
+    "price":35000.00,
+    "stock":25,
+    "categoryId":3,
+    "imageUrl":"img/HVSA4.jpg"
 }
 
 ###
-PUT http://localhost:8080/products/4
-Content-Type: application/json
-
-{
-    "name":"Iphone 14 Pro",
-    "description":"Latest model IPhone",
-    "price":3500000.00,
-    "stock":10,
-    "categoryId":1,
-    "imageUrl":"img/iphone.jpg"
-}
-###
-PUT http://localhost:8080/products/4
+PUT http://localhost:8080/api/products/4
 Content-Type: application/json
 
 {
@@ -49,55 +63,81 @@ Content-Type: application/json
     "categoryId":1,
     "imageUrl":"img/iphone.jpg"
 }
-###
-PUT http://localhost:8080/products/4
-Content-Type: application/json
 
-{
-    "name":"Iphone 14 Pro",
-    "description":"Latest model IPhone",
-    "price":3500000.00,
-    "stock":10,
-    "categoryId":1,
-    "imageUrl":"img/iphone.jpg"
-}
 ###
-PUT http://localhost:8080/products/4
-Content-Type: application/json
-
-{
-    "name":"Iphone 14 Pro",
-    "description":"Latest model IPhone",
-    "price":3500000.00,
-    "stock":10,
-    "categoryId":1,
-    "imageUrl":"img/iphone.jpg"
-}
+DELETE http://localhost:8080/api/products/7
 
 ###
 # Rest API Endpoints for Cart
-POST http://localhost:8080/api/cart/1/add
+POST http://localhost:8080/api/cart/3/add
 Content-Type: application/json
 
 {
-  "product": { "id": 1 },
+  "product": { "id": 7 },
   "quantity": 2
 }
 
 ###
-GET http://localhost:8080/api/cart/1
+GET http://localhost:8080/api/cart/2
 
 ###
-DELETE http://localhost:8080/api/cart/1/clear
+DELETE http://localhost:8080/api/cart/2/clear
 
 ###
-PUT http://localhost:8080/api/cart/1/update
+PUT http://localhost:8080/api/cart/2/update
 Content-Type: application/json
 
 {
-    "product": { "id": 1 },
-    "quantity": 3
+    "product": { "id": 4 },
+    "quantity": 4
 }
 
 ###
-DELETE http://localhost:8080/api/cart/1/item/2/remove
+DELETE http://localhost:8080/api/cart/2/item/11/remove
+
+###
+# Rest API Endpoints for Category
+GET http://localhost:8080/api/categories
+
+###
+POST http://localhost:8080/api/categories
+Content-Type: application/json
+
+{
+  "name": "Alat Tulis Kantor",
+  "description": "Perlengkapan alat tulis kantor"
+}
+
+###
+PUT http://localhost:8080/api/categories/3
+Content-Type: application/json
+
+{
+  "name": "Alat Tulis Kantor (ATK)",
+  "description": "Perlengkapan alat tulis kantor dan sekolah"
+}
+
+###
+DELETE http://localhost:8080/api/categories/4
+
+# Rest API Endpoints for Order
+###
+POST http://localhost:8080/api/orders/place/3?shippingAddress=Jl. Dungdat No. 10&paymentMethod=CreditCard
+Content-Type: application/json
+
+{
+    "cartId": 1,
+    "userId": 3
+}
+
+###
+GET http://localhost:8080/api/orders/user/3
+
+###
+GET http://localhost:8080/api/orders/4
+
+###
+PUT http://localhost:8080/api/orders/5/status?newStatus=pendig
+
+###
+PUT http://localhost:8080/api/orders/5/cancel
